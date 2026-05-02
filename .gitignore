@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.tmp/
+.env
+.env.*
+!.env.example
+.doppelganger/
+.doppelganger/config.user.toml
+_doppelganger_sdd/

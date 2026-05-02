@@ -1,0 +1,57 @@
+{
+  "name": "@whoisclebs/opencode-doppelganger",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that generates reconstruction-ready specifications for the current project.",
+  "author": {
+    "name": "Clebson"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whoisclebs/opencode-doppelganger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whoisclebs/opencode-doppelganger/issues"
+  },
+  "homepage": "https://github.com/whoisclebs/opencode-doppelganger#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir dist --target bun --format esm --external @opencode-ai/plugin && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "bun run lint && bun run test && bun run build"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.14.30"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/bun": "^1.3.3",
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "8.47.0",
+    "@typescript-eslint/parser": "8.47.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.47.0"
+  }
+}
